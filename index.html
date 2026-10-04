@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Muthu Bharathi M: B.E. CSE (AIML) student in Chennai. Projects, internships, education and contact.">
+<title>Muthu Bharathi M · AIML Student</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,650;1,9..144,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d0b24;--plum:#3a1646;--orchid:#e9a3cf;--pearl:#f7eef5;--gold:#d4b077;
+--serif:'Fraunces',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-variant-numeric:lining-nums;background:radial-gradient(ellipse at 20% 0%,#4a1c58 0%,transparent 55%),radial-gradient(ellipse at 90% 60%,#35123f 0%,transparent 50%),var(--ink);background-attachment:fixed;color:var(--pearl);font-family:var(--sans);line-height:1.65;overflow-x:hidden}
+header,main,footer{position:relative;z-index:1}
+a{color:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+header{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.9rem clamp(1.2rem,5vw,4rem);background:rgba(29,11,36,.65);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.logo{font-family:var(--serif);font-style:italic;font-size:1.3rem;text-decoration:none}
+nav ul{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
+nav a{text-decoration:none;font-size:.92rem;opacity:.85}
+nav a:hover{opacity:1;color:var(--orchid)}
+
+section{padding:clamp(4rem,9vw,7rem) clamp(1.2rem,5vw,4rem);max-width:1200px;margin:0 auto}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(2rem,5vw,3.4rem);line-height:1.1;margin-bottom:.6rem}
+h2 i{color:var(--orchid)}
+.sub{opacity:.8;max-width:34rem;margin-bottom:2.4rem}
+.glass{background:rgba(58,22,70,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(233,163,207,.25);border-radius:22px;padding:1.6rem}
+
+.btn{display:inline-block;padding:.8rem 1.6rem;border-radius:999px;text-decoration:none;font-weight:500;border:1px solid var(--orchid);background:none;color:inherit;font:inherit;cursor:pointer;transition:.3s}
+.btn.fill{background:var(--orchid);color:var(--ink)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(233,163,207,.35)}
+
+/* hero */
+.hero{min-height:86vh;display:flex;flex-direction:column;justify-content:center}
+.hero a,.hero .badge{pointer-events:auto}
+.badge{align-self:flex-start;padding:.35rem 1rem;border-radius:999px;border:1px solid var(--gold);color:var(--gold);font-size:.88rem;margin-bottom:1.4rem}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(3.4rem,13vw,9.5rem);line-height:.95;letter-spacing:-.02em}
+.hero h1 i{color:var(--orchid)}
+.hero .role{font-family:var(--serif);font-style:italic;font-size:1.4rem;margin-top:1rem;color:var(--gold)}
+.hero p.lead{max-width:30rem;margin-top:1rem}
+.btns{margin-top:1.8rem;display:flex;gap:1rem;flex-wrap:wrap}
+.stats{display:flex;gap:2.5rem;margin-top:2.6rem;flex-wrap:wrap}
+.stats b{display:block;font-family:var(--serif);font-size:2.4rem;font-weight:600;color:var(--orchid);line-height:1}
+.stats span{font-size:.85rem;opacity:.8}
+
+/* about */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:3rem;align-items:start}
+.about p+p{margin-top:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.chips span{font-size:.85rem;padding:.3rem .9rem;border-radius:999px;background:rgba(233,163,207,.16);border:1px solid rgba(233,163,207,.3)}
+.facts div+div{margin-top:1.2rem}
+.facts b{display:block;font-family:var(--serif);font-size:2rem;font-weight:600;color:var(--gold)}
+
+/* skills */
+.skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.skillgrid h3{font-family:var(--serif);font-weight:600;margin-bottom:1rem}
+.skill{margin-top:.9rem;font-size:.92rem}
+.bar{height:6px;border-radius:9px;background:rgba(247,238,245,.15);margin-top:.3rem;overflow:hidden}
+.bar i{display:block;height:100%;width:var(--v);border-radius:9px;background:linear-gradient(90deg,var(--orchid),var(--gold));transform-origin:left;transform:scaleX(0);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.skillgrid.on .bar i{transform:scaleX(1)}
+
+/* projects: 3D tilt */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem;perspective:1100px}
+.card{transform-style:preserve-3d;transition:transform .15s ease-out,box-shadow .3s;min-height:290px;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.card h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;transform:translateZ(40px)}
+.card p{margin-top:.7rem;transform:translateZ(22px)}
+.card .metric{margin-top:.8rem;color:var(--gold);transform:translateZ(26px)}
+.tags{margin-top:auto;padding-top:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem;transform:translateZ(30px)}
+.tags span{font-size:.78rem;padding:.2rem .75rem;border-radius:999px;background:rgba(233,163,207,.16);border:1px solid rgba(233,163,207,.3)}
+
+/* education: double strand */
+.strand{position:relative;max-width:760px;margin:0 auto}
+.strand::before,.strand::after{content:"";position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(var(--orchid),var(--gold));opacity:.7}
+.strand::before{transform:translateX(-7px)}
+.strand::after{transform:translateX(5px)}
+.step{position:relative;width:50%;padding:0 2.6rem 2.6rem 0}
+.step:nth-child(even){margin-left:50%;padding:0 0 2.6rem 2.6rem}
+.step::before{content:"";position:absolute;top:1.4rem;right:0;width:2.6rem;height:2px;background:var(--orchid)} /* rung */
+.step:nth-child(even)::before{right:auto;left:0}
+.step::after{content:"";position:absolute;top:1.4rem;right:-7px;width:14px;height:14px;margin-top:-6px;border-radius:50%;background:var(--ink);border:2px solid var(--gold)}
+.step:nth-child(even)::after{right:auto;left:-7px}
+.step small{color:var(--gold)}
+.step h3{font-family:var(--serif);font-weight:600;font-size:1.25rem}
+
+/* certificates marquee */
+.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:1.2rem;width:max-content;animation:slide 30s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.cert{width:260px;flex:none}
+.cert b{font-family:var(--serif);font-size:1.1rem;font-weight:600}
+.cert small{display:block;opacity:.75;margin-top:.3rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+.hint{opacity:.6;font-size:.85rem;margin-top:1rem}
+
+/* resume + contact */
+.resume{text-align:center}
+.resume p{max-width:32rem;margin:0 auto 1.5rem}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.info div+div{margin-top:1.1rem}
+.info small{display:block;color:var(--gold)}
+form{display:grid;gap:1rem}
+label{font-size:.9rem}
+input,textarea{width:100%;margin-top:.3rem;padding:.8rem 1rem;border-radius:12px;border:1px solid rgba(233,163,207,.3);background:rgba(29,11,36,.6);color:var(--pearl);font:inherit}
+textarea{min-height:120px;resize:vertical}
+.note{font-size:.8rem;opacity:.65}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding:2rem clamp(1.2rem,5vw,4rem);opacity:.75;font-size:.88rem;border-top:1px solid rgba(233,163,207,.2);background:rgba(29,11,36,.7)}
+footer ul{display:flex;gap:1.2rem;list-style:none}
+
+.soon{margin-top:.8rem;padding:.55rem .9rem;border:1px dashed var(--gold);border-radius:12px;color:var(--gold);font-size:.88rem;transform:translateZ(26px)}
+.exp+.exp{margin-top:1.4rem}
+.exp h3{font-family:var(--serif);font-weight:600;font-size:1.3rem}
+.exp h3 span{font-family:var(--sans);font-weight:400;font-size:.95rem;color:var(--orchid)}
+.exp ul{margin:.6rem 0 0 1.2rem}
+.langs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin-top:1.4rem}
+.learning{border-color:var(--gold)}
+@media(max-width:760px){
+ .about,.contact-wrap{grid-template-columns:1fr}
+ .strand::before{transform:none}.strand::after{display:none}
+ .step,.step:nth-child(even){width:100%;margin-left:0;padding:0 0 2rem 2.4rem}
+ .step::before,.step:nth-child(even)::before{left:0;right:auto;width:1.6rem}
+ .step::after,.step:nth-child(even)::after{left:-7px;right:auto}
+ .strand::before{left:0}
+ header{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.bar i{transition:none}.card,.btn{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="#home">Muthu Bharathi M</a>
+  <nav aria-label="Main"><ul>
+    <li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#experience">Experience</a></li><li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li>
+  </ul></nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <span class="badge">Open to AI/ML internship opportunities</span>
+    <h1>Muthu<br><i>Bharathi M</i></h1>
+    <div class="role">B.E. CSE (AIML) student</div>
+    <p class="lead">Second-year student with a strong base in programming and AI, applying technical skills and creativity to real-world problems.</p>
+    <div class="btns">
+      <a class="btn fill" href="Muthu_Bharathi_Resume.docx" download>Download resume</a>
+      <a class="btn" href="#contact">Get in touch</a>
+    </div>
+    <div class="stats">
+      <div><b>3</b><span>AI projects</span></div>
+      <div><b>2</b><span>Internships</span></div>
+      <div><b>8.29</b><span>Current CGPA</span></div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div>
+      <h2>Curious about <i>AI.</i></h2>
+      <p>I'm a second-year B.E. CSE (AIML) student at Jeppiaar Engineering College, Chennai, motivated by programming and AI technologies.</p>
+      <p>I want to use my technical skills and creativity to solve real-world problems through innovative solutions.</p>
+      <div class="chips"><span>Artificial Intelligence</span><span>Machine Learning</span><span>Python</span><span>Cybersecurity basics</span></div>
+    </div>
+    <div class="glass facts">
+      <div><b>2029</b>Expected graduation</div>
+      <div><b>Chennai</b>Tamil Nadu</div>
+      <div><b>4</b>Languages spoken</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills &amp; <i>learning</i></h2>
+    <p class="sub">What I work with today, and what I'm learning next.</p>
+    <div class="skillgrid">
+      <div class="glass"><h3>Technical</h3>
+        <div class="chips"><span>Python</span><span>C</span><span>C++</span><span>Java (basic)</span><span>Artificial Intelligence</span><span>Machine Learning</span><span>Linux (basics)</span></div>
+      </div>
+      <div class="glass learning"><h3>Currently learning</h3>
+        <div class="chips"><span>DevOps</span></div>
+        <p style="margin-top:1rem;font-size:.92rem;opacity:.85">Building on my Linux basics.</p>
+      </div>
+      <div class="glass"><h3>Soft skills</h3>
+        <div class="chips"><span>Problem-solving</span><span>Leadership</span><span>Creativity</span><span>Adaptability</span><span>Time management</span><span>Quick learner</span></div>
+      </div>
+    </div>
+    <div class="langs">
+      <div class="glass"><b>English</b><br>Professional working proficiency</div>
+      <div class="glass"><b>Tamil</b><br>Native</div>
+      <div class="glass"><b>Kannada</b><br>Working proficiency</div>
+      <div class="glass"><b>Hindi</b><br>Elementary proficiency</div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Internship <i>experience</i></h2>
+    <p class="sub">Hands-on work in programming and security.</p>
+    <div class="glass">
+      <div class="exp"><h3>Python Programming Intern <span>· CodSoft</span></h3>
+        <ul><li>Developed Python-based projects and improved programming proficiency.</li><li>Worked on real-time problem-solving tasks using Python.</li></ul></div>
+      <div class="exp"><h3>Security Analyst Intern <span>· Oasis Infobyte</span></h3>
+        <ul><li>Gained hands-on experience in cybersecurity concepts.</li><li>Analyzed security vulnerabilities and assisted in threat detection.</li></ul></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected <i>projects</i></h2>
+    <p class="sub">AI systems built to solve real problems.</p>
+    <div class="grid">
+      <article class="glass card">
+        <h3>AI-Based Sign Language to Speech Converter</h3>
+        <p>An AI system that converts sign language into speech for ear and speech impaired individuals.</p>
+        <!-- When ready, replace the next line with: <a class="soon" href="YOUR_LINK">View project</a> -->
+        <div class="soon">Project link: will be uploaded soon</div>
+        <div class="tags"><span>AI</span><span>Python</span><span>OpenCV</span><span>MediaPipe</span></div>
+      </article>
+      <article class="glass card">
+        <h3>AI-Based Smart Attendance System</h3>
+        <p>A facial recognition-based smart attendance system built using AI/ML.</p>
+        <div class="soon">Project link: will be uploaded soon</div>
+        <div class="tags"><span>AI/ML</span><span>Face recognition</span></div>
+      </article>
+      <article class="glass card">
+        <h3>AI-Based Fire and Smoke Detection</h3>
+        <p>An AI model that detects fire and smoke for early warning systems.</p>
+        <div class="soon">Project link: will be uploaded soon</div>
+        <div class="tags"><span>AI/ML</span><span>Detection</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Academic <i>path</i></h2>
+    <p class="sub">Every milestone, encoded as a strand.</p>
+    <div class="strand">
+      <div class="step glass"><small>2025 – 2029</small><h3>B.E. CSE (AIML), CGPA 8.29</h3><p>Jeppiaar Engineering College · Anna University</p></div>
+      <div class="step glass"><small>HSC · 86%</small><h3>Higher secondary</h3><p>K.C. Sankaralinga Nadar Hr. Sec. School · Tamil Nadu Board</p></div>
+      <div class="step glass"><small>SSC · 91%</small><h3>Secondary school</h3><p>K.C. Sankaralinga Nadar Hr. Sec. School · Tamil Nadu Board</p></div>
+    </div>
+  </section>
+
+  <section id="resume" class="resume">
+    <h2>My full <i>resume</i></h2>
+    <p>Education, internships, projects and skills in one document.</p>
+    <a class="btn fill" href="Muthu_Bharathi_Resume.docx" download>Download resume (.docx)</a>
+  </section>
+
+  <section id="contact">
+    <h2>Let's build <i>something</i></h2>
+    <p class="sub">Open to internships and collaborative projects. Reach out any time.</p>
+    <div class="contact-wrap">
+      <div class="glass info">
+        <div><small>Email</small>mbharathi984@gmail.com</div>
+        <div><small>Phone</small>7305573457</div>
+        <div><small>Location</small>Chennai, Tamil Nadu</div>
+        <div><small>LinkedIn</small><a href="https://linkedin.com/in/muthu-bharathi-m-065629383" target="_blank" rel="noopener">linkedin.com/in/muthu-bharathi-m-065629383</a></div>
+      </div>
+      <form class="glass" id="form">
+        <label>Name<input name="n" required></label>
+        <label>Email<input type="email" name="e" required></label>
+        <label>Message<textarea name="m" required></textarea></label>
+        <button class="btn fill" type="submit">Send message</button>
+        <p class="note">This opens your mail app with the message filled in. Nothing is stored.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© <span id="yr"></span> Muthu Bharathi M. Built with HTML, CSS &amp; JavaScript.</span>
+  <ul><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* contact form -> mail app */
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  const body = encodeURIComponent(f.m.value + '\n\n' + f.n.value + ' (' + f.e.value + ')');
+  location.href = 'mailto:mbharathi984@gmail.com?subject=' + encodeURIComponent('Portfolio message from ' + f.n.value) + '&body=' + body;
+});
+
+/* 3D tilt on project cards */
+if (!reduce) document.querySelectorAll('.card').forEach(c => {
+  c.addEventListener('pointermove', e => {
+    const r = c.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    c.style.transform = `rotateY(${x * 16}deg) rotateX(${-y * 16}deg) translateZ(10px)`;
+  });
+  c.addEventListener('pointerleave', () => { c.style.transform = ''; });
+});
+
+</script>
+</body>
+</html>
